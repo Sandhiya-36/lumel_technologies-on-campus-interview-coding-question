@@ -1,0 +1,27 @@
+import java.util.*;
+public class Main
+{
+    public static int move(char a){
+        if(a<='z'||a>='a'){
+            return a-'a';
+        }
+         else if(a<='Z'||a>='A'){
+            return a-'A';
+        }
+        return 0;
+    }
+    public  static String decode(String str){
+    String output="";
+        for(int i=0;i<str.length();i++){
+            output+=(str.charAt(i));
+            i+=move(str.charAt(i));
+            
+        }
+        return output;
+    }
+	public static void main(String[] args) {
+	    Scanner s=new Scanner(System.in);
+	String st=s.nextLine();
+	System.out.println(decode(st));
+	}
+}
